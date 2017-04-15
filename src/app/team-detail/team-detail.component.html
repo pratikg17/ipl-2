@@ -1,0 +1,8 @@
+<div *ngIf="selectedTeam">
+    <h3>
+        {{selectedTeam.name}} Details!
+    </h3>
+    <h4>
+        <input placeholder="Team Name" class="form-control" [(ngModel)]="selectedTeam.name">
+    </h4>
+</div>
