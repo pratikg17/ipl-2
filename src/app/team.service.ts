@@ -18,11 +18,16 @@ const TEAMS: Team[] = [
 @Injectable()
 export class TeamService {
 
-    getTeam(): Team[]{
-        return TEAMS;
+    getTeam(): Promise<Team[]>{
+        return  Promise.resolve(TEAMS);
     }
 
 
-
+    getTeamDetail(position: number): Promise<Team> {
+        return this.getTeam()
+            .then(team => team.find(team => team.position === position));
+        
+        
+    }
 
 }
